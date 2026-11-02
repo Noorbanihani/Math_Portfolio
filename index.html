@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- عنوان الصفحة يحتوي على الرقم الجامعي والاسم الكامل حسب تعليمات الدكتور -->
+    <title>166769 - Noor Nizar Bani Hani</title>
+    <!-- استدعاء خط أنيق ودعم الأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-glow: #60a5fa;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar Menu */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-logo {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--accent-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+            background: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Profile Card */
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 6px; height: 100%;
+            background: var(--accent);
+        }
+
+        .profile-details h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--accent);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .info-item strong {
+            color: var(--primary);
+        }
+
+        .mailto-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .mailto-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.8rem;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        /* Soft Skills Badges */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-chip {
+            background: #f1f5f9;
+            color: var(--primary);
+            padding: 0.7rem 1.3rem;
+            border-radius: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-chip:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Custom Modern Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        th, td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+        }
+
+        th {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tr:hover {
+            background-color: #eff6ff;
+        }
+
+        table a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        table a:hover {
+            text-decoration: underline;
+        }
+
+        /* Paragraph Styling */
+        .future-text {
+            color: #334155;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Custom Photo Section Styling --- */
+        .coded-photo-container {
+            position: relative;
+            width: 200px; /* Increased size to accommodate layout */
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coded-photo-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .coded-photo-wrapper svg {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1); /* Slightly zoom the vector artwork */
+        }
+
+        /* Animated Math Overlay on Hover */
+        .coded-photo-container:hover .math-overlay {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .math-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 180px;
+            height: 180px;
+            opacity: 0;
+            transition: all 0.5s ease-out;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-logo">JUST <span>Portfolio</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- 1. Profile Section with Integrated Coded Photo -->
+        <div class="profile-card fade-in">
+            <!-- New Coded Photo Integrated Here -->
+            <div class="coded-photo-container">
+                <div class="coded-photo-wrapper">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Geometric Background Layer -->
+                      <defs>
+                        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                          <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+                        </radialGradient>
+                      </defs>
+                      <circle cx="50%" cy="50%" r="48" fill="url(#grad1)"/>
+                      
+                      <!-- Campus Building Silhouette (Reflects photo location) -->
+                      <path d="M70 75H30V65L35 60L40 65V60L45 55L50 60V55L55 50L60 55V50L65 55L70 60V75Z" fill="#a3b1c6"/>
+                      
+                      <!-- Entrance Arch Frame (Based on photo) -->
+                      <path d="M25 80V50C25 35 75 35 75 50V80H65V55C65 45 35 45 35 55V80H25Z" fill="#718096"/>
+                      
+                      <!-- Faculty Building Text Symbol (Simplified "كلية العلوم والآداب") -->
+                      <text x="50" y="55" font-family="Arial" font-size="3" fill="white" text-anchor="middle">FACULTY OF SCIENCE</text>
+                      
+                      <!-- Portrait Placeholder (Vector representation of portrait pose) -->
+                      <ellipse cx="50" y="65" rx="8" ry="12" fill="#52525b"/> <!-- Green coat vector -->
+                      <circle cx="50" y="50" r="5" fill="#fecdd3"/> <!-- Hijab and face -->
+                      
+                      <!-- Autumn Leaf Accents (From photo) -->
+                      <path d="M20 30L25 35L20 40Z" fill="#fb923c"/>
+                      <path d="M75 30L80 35L75 40Z" fill="#f97316"/>
+                      <path d="M85 45L90 50L85 55Z" fill="#fb923c"/>
+                      
+                      <!-- Normal Distribution Curve (Statistical math element) -->
+                      <path d="M20 75 Q35 65 50 65 Q65 65 80 75" stroke="#2563eb" fill="none" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    </svg>
+                </div>
+                <!-- Math Overlay Animation -->
+                <div class="math-overlay">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" opacity="0.3">
+                        <text x="50" y="30" font-family="Arial" font-size="8" fill="#2563eb" text-anchor="middle">Σ x² = μ</text>
+                        <text x="50" y="70" font-family="Arial" font-size="8" fill="#2563eb" text-anchor="middle">y = f(x)</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="profile-details">
+                <span class="badge">Student Academic Profile</span>
+                <h1>Noor Nizar Bani Hani</h1>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Student ID (SID):</strong> 166769</div>
+                    <div class="info-item"><strong>Major:</strong> Mathematics and Statistics</div>
+                    <div class="info-item"><strong>Academic Level:</strong> Fourth Grade (Fourth Year)</div>
+                    <div class="info-item"><strong>Date of Birth:</strong> 10/11/2004</div>
+                    <div class="info-item"><strong>University:</strong> JUST</div>
+                </div>
+                <!-- Mailto Link -->
+                <a href="mailto:nnbanihani21@cit.just.edu.jo" class="mailto-btn">
+                    <i class="fa-regular fa-envelope"></i> Email Me (University Email)
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. Soft Skills Section -->
+        <div class="section-card fade-in delay-1">
+            <h2 class="section-title"><i class="fa-solid fa-brain"></i> Key Soft Skills</h2>
+            <div class="skills-container">
+                <div class="skill-chip"><i class="fa-solid fa-square-root-variable"></i> Analytical & Logical Thinking</div>
+                <div class="skill-chip"><i class="fa-solid fa-chart-pie"></i> Statistical Problem-Solving</div>
+                <div class="skill-chip"><i class="fa-solid fa-users"></i> Teamwork & Collaboration</div>
+                <div class="skill-chip"><i class="fa-solid fa-comments"></i> Academic & Mathematical Communication</div>
+                <div class="skill-chip"><i class="fa-solid fa-sliders"></i> Adaptability & Critical Reasoning</div>
+            </div>
+        </div>
+
+        <!-- 3. Favorite Tools & Frameworks Table -->
+        <div class="section-card fade-in delay-2">
+            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Computational & Statistical Tools</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool / Framework</th>
+                        <th>Category</th>
+                        <th>Official Resource</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Python (NumPy / SciPy)</td>
+                        <td>Data Analysis & Scientific Computing</td>
+                        <td><a href="https://www.python.org" target="_blank">python.org <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>R Project</td>
+                        <td>Statistical Computing & Graphics</td>
+                        <td><a href="https://www.r-project.org" target="_blank">r-project.org <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>MATLAB</td>
+                        <td>Mathematical Modeling & Matrix Algebra</td>
+                        <td><a href="https://www.mathworks.com" target="_blank">mathworks.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>LaTeX</td>
+                        <td>Mathematical & Academic Document Preparation</td>
+                        <td><a href="https://www.latex-project.org" target="_blank">latex-project.org <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4. Future Goals Paragraph (6 to 8 Sentences) -->
+        <div class="section-card fade-in delay-3">
+            <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Where Do I See Myself in 4 Years?</h2>
+            <p class="future-text">
+                In four years, I envision myself pursuing advanced postgraduate studies (Master’s or Ph.D.) to deeply explore the profound role of mathematics and statistics in everyday life and practical applications. Mathematics is not merely abstract formulas; it is the universal language that forms the fundamental foundation for virtually all other scientific disciplines, including physics, computer science, data analytics, and economics. Through my advanced research, I aim to demonstrate how mathematical modeling and statistical analysis drive modern innovation, decision-making, and technological progress. Furthermore, I intend to apply complex statistical methodologies to solve real-world problems in predictive modeling and quantitative analysis. By bridging theoretical mathematics with interdisciplinary sciences, I plan to contribute meaningful research that highlights the necessity of analytical precision in industry. Ultimately, I aspire to hold a leading academic or research position where I can continue expanding the boundaries of applied mathematical sciences.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Noor Nizar Bani Hani - Jordan University of Science and Technology (JUST)</p>
+    </footer>
+
+</body>
+</html>
